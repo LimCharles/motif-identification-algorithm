@@ -1417,8 +1417,6 @@ def onehot(i, length):
   a[i] = 1
   return a
 
-
-
 def main():
   filename = sys.argv[1]
   print (('File: {}'.format(filename)))

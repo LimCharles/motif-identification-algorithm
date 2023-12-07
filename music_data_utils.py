@@ -1139,7 +1139,20 @@ class MusicDataLoader(object):
         song_data.append([0.0, 440.0, 0.0, pace_tick, 0.0])
         pace_tick += float(ticks_per_quarter_note)/input_ticks_per_output_tick
       song_data.sort(key=lambda e: e[BEGIN_TICK])
+
+    motif_score = self.get_motif_score(song_data, motif)
+    song_data_with_motif = self.add_motif_score_to_song_data(song_data, motif_score)
+
     return song_data
+  
+  def get_motif_score(self, song_data, motif):
+        score = 0.0
+        return score
+
+  def add_motif_score_to_song_data(self, song_data, motif_score):
+      for frame in song_data:
+          frame.append(motif_score)
+      return song_data
 
   def rewind(self, part='train'):
     self.pointer[part] = 0
